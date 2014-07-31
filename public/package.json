@@ -1,0 +1,23 @@
+{
+  "name": "Project Name",
+  "version": "0.0.1",
+  "description": "Project Name",
+  "license": "BSD-2-Clause",
+  "author": {
+    "name": "Hendra Susanto"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-autoprefixer": "~0.7.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-imagemin": "~0.6.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-compass": "~0.7.2",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-csso": "~0.6.1",
+    "grunt-contrib-jade": "~0.9.1"
+  }
+}
