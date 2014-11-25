@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+  // load all grunt tasks matching the `grunt-*` pattern
+  require('load-grunt-tasks')(grunt);
+
   // var name = '<%= pkg.name %>-v<%= pkg.version %>';
   var assetsDir = 'assets/',
       scriptsDir = assetsDir + 'js/',
@@ -188,19 +191,6 @@ module.exports = function(grunt) {
       }
     }
   });
-
-  // Load the pluigns that provide the tasks.
-  // grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-csso');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   // Default task(s)
   grunt.registerTask('default', ["jade", "sass", "autoprefixer", "csso:compress", "concat", "uglify"]);
