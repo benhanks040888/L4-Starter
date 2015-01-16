@@ -3,6 +3,16 @@
 class BaseController extends Controller {
 
 	/**
+	 * Set CSRF filter on every POST request
+	 *
+	 * @return void
+	 */
+  public function __construct()
+  {
+    $this->beforeFilter('csrf', array('on' => 'post'));
+  }
+
+	/**
 	 * Setup the layout used by the controller.
 	 *
 	 * @return void
