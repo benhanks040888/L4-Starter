@@ -21,4 +21,6 @@ This is my starter kit for Laravel 4.
   * Run `composer install` in `/app` root.
   * Run `php artisan key:generate`.
   * Run `npm install` in `/public` folder to install Grunt and its plugins.
-  * No newline at end of file
+  * Run `chmod -R 777 app/storage`.
+  * Optionally, run `chmod -R 777 public/uploads` if you want to have an upload folder for user-generated-content.
+  * No newline at end of file.
