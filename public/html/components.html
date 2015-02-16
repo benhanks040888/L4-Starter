@@ -87,18 +87,18 @@
       $(function() {
         $('.docs-container').each(function() {
           var $this = $(this);
-          
+      
           var moduleHtml = $.trim($this.find('.module-wrapper').html());
-          
+      
           $this.find('pre > code').text(moduleHtml).html();
         });
-        
+      
         $('.js-show-code').on('click', function(e) {
           e.preventDefault();
           
           var $this = $(this),
               codeContainer = $this.next('.code-container');
-              
+      
           if (codeContainer.hasClass('hide')) {
             $this.text('Hide Code');
           } else {
