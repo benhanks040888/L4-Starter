@@ -82,7 +82,7 @@ module.exports = function(grunt) {
         },
         files: {
           'assets/css/site.min.css': ['<%= autoprefixer.single_file.src %>'],
-          'assets/css/site.prefixed.min.css': ['<%= autoprefixer.single_file.src %>']
+          'assets/css/site.prefixed.min.css': ['<%= autoprefixer.single_file.dest %>']
         }
       }
     },
