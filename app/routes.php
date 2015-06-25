@@ -12,7 +12,7 @@
 */
 
 Route::group(array('namespace' => 'App\Controllers'), function() {
-  Route::get('/', array('as' => 'home', 'uses' => 'HomeController@showWelcome'));
+  Route::get('/', array('as' => 'home', 'uses' => 'HomeController@getIndex'));
 });
 
 

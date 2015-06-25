@@ -5,7 +5,7 @@ use View;
 
 class HomeController extends BaseController {
 
-	public function showWelcome()
+	public function getIndex()
 	{
 		return View::make('hello');
 	}
