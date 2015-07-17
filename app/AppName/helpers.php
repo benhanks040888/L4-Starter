@@ -33,6 +33,26 @@ if ( ! function_exists('uploads'))
   }
 }
 
+if ( ! function_exists('uploads_path'))
+{
+  /**
+   * Get the URL to uploads_path folder
+   *
+   * @param  string  $path
+   * @param  bool    $secure
+   * @return string
+   */
+  function uploads_path($upload)
+  {
+    if (file_exists(public_path() . 'uploads/' . $upload)) {
+      return 'no image broh';
+    }
+
+    return public_path() . '/uploads/' . ltrim($upload, '/');
+  }
+}
+
+
 if ( ! function_exists('show_error_page'))
 {
   /**
@@ -126,7 +146,10 @@ if ( ! function_exists('resizeSelf'))
   function resizeSelf($path, $width = 1024)
   {
     $image = Image::make($path)
-              ->resize($width, null, true)
+              ->resize($width, null, function($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+              })
               ->save($path);
 
     return $image;
