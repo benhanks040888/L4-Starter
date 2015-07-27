@@ -46,6 +46,13 @@ class User extends \Cartalyst\Sentry\Users\Eloquent\User implements UserInterfac
 	);
 
   /**
+   * The appended attributes that should be visible in arrays.
+   *
+   * @var arrays
+   */
+  protected $appends = array('full_name');
+
+  /**
    * function isAdmin
    *
    * @return string
@@ -53,6 +60,16 @@ class User extends \Cartalyst\Sentry\Users\Eloquent\User implements UserInterfac
   public function isAdmin()
   {
     return Sentry::check() && Sentry::getUser()->hasAccess('admin');
+  }
+
+  /**
+   * Accessor for the "full_name" attribute.
+   *
+   * @return string
+   */
+  public function getFullNameAttribute()
+  {
+    return ucwords(trim($this->attributes['first_name'] . ' ' . $this->attributes['last_name']));
   }
 
 }

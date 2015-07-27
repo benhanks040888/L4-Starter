@@ -30,6 +30,7 @@ $env = $app->detectEnvironment(array(
     'dev.*',   '*.dev',
     'local.*', '*.local',
     'local*',
+    'Hendra*'
   ),
 
   'staging' => array(
