@@ -62,7 +62,7 @@
           cookie: true,
           xfbml: true,
           oauth: true,
-          // version: 'v2.0'
+          version: 'v2.2'
         });
       };
 
