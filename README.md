@@ -16,7 +16,7 @@ This is my starter kit for Laravel 4.
 
 ### Get Started
 
-  * Change `AppName` in `composer.json`, `app/start/global.php` and the `AppName` directory in app folder to your application name.
+  * Change `AppName` in `composer.json`, `app/start/global.php`, `app/AppName/Services/Validation/Validator.php` and the `AppName` directory in app folder to your application name.
   * Change `username` in `app/database/seeds/SentrySeeder.php` if you want.
   * Run `composer install` in `/app` root.
   * Run `php artisan key:generate`.
