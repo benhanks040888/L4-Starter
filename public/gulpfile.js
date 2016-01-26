@@ -55,15 +55,15 @@ gulp.task('jade', function() {
 });
 
 gulp.task('imagemin', function() {
-  return gulp.src(imagesDir + '**/*.{png,jpg,gif}')
+  return gulp.src(imagesDir + '**/*.*')
               .pipe(imagemin({
-                optimizationLevel: 5,
+                optimizationLevel: 7,
                 progressive: true,
                 interlaced: true,
                 svgoPlugins: [{removeViewBox: false}],
                 use: [pngquant()]
               }))
-              .pipe(gulp.dest('imagesDir'));
+              .pipe(gulp.dest(imagesDir));
 });
 
 
