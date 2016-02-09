@@ -16,6 +16,7 @@ var uglify = require('gulp-uglify');
 var jade = require('gulp-jade');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var spritesmith = require('gulp.spritesmith');
 
 gulp.task('styles', function() {
   return gulp.src(scssDir + '**/*.scss')
@@ -66,6 +67,14 @@ gulp.task('imagemin', function() {
               .pipe(gulp.dest(imagesDir));
 });
 
+gulp.task('sprite', function () {
+  var spriteData = gulp.src(imagesDir + 'icons/*.png').pipe(spritesmith({
+    padding: 10,
+    imgName: imagesDir + 'icons.png',
+    cssName: scssDir + 'modules/_icons.scss'
+  }));
+  return spriteData.pipe(gulp.dest('.'));
+});
 
 gulp.task('watch', function() {
   gulp.watch(scssDir + '**/*.scss', ['styles']);
