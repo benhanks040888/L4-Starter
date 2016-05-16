@@ -123,7 +123,6 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Way\Generators\GeneratorsServiceProvider',
-		'Barryvdh\Debugbar\ServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 
