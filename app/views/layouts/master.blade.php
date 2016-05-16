@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>@yield('title', Config::get('site.title'))</title>
+
     <meta name="description" content="@yield('description', Config::get('site.description'))">
 
     @section('twitter_meta')
@@ -26,8 +28,6 @@
 
     <meta name="base_url" content="{{ URL::to('/') }}">
     <meta name="_token" content="{{ csrf_token() }}" />
-
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     <link rel="apple-touch-icon" sizes="57x57" href="{{ assets_url('images/favicons/apple-touch-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ assets_url('images/favicons/apple-touch-icon-60x60.png') }}">
