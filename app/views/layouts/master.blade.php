@@ -44,8 +44,6 @@
 
     @yield('styles')
 
-    <link rel="author" href="{{ asset('humans.txt') }}">
-
     <script>
       window.base_url = '{{ URL::to('/') }}';
     </script>
