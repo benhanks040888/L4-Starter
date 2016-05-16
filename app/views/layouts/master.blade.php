@@ -2,8 +2,8 @@
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', Config::get('site.title'))</title>
     <meta name="description" content="@yield('description', Config::get('site.description'))">
 
@@ -48,19 +48,16 @@
       window.base_url = '{{ URL::to('/') }}';
     </script>
   </head>
-  <body class="debug">
-
+  <body>
     <div id="fb-root"></div>
 
     <script>
       window.fbAsyncInit = function() {
         FB.init({
           appId: '{{ Config::get('facebook.appId') }}',
-          status: true,
           cookie: true,
           xfbml: true,
-          oauth: true,
-          version: 'v2.2'
+          version: 'v2.6'
         });
       };
 
@@ -79,8 +76,8 @@
 
     @include('_partials.footer')
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{ str_replace('/', '\/', assets_url('js/vendors/jquery-1.11.0.min.js')) }}"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ str_replace('/', '\/', assets_url('js/vendors/jquery-2.2.3.min.js')) }}"><\/script>')</script>
 
     <script src="{{ assets_url('js/vendors/bootstrap.min.js') }}"></script>
     <script src="{{ assets_url('js/site.min.js') }}?v={{ filemtime(public_path() . '/assets/js/site.min.js') }}"></script>
