@@ -26,12 +26,12 @@ gulp.task('styles', function() {
             .pipe(autoprefixer({
               browsers: ['last 3 versions', 'ie 9']
             }))
-            .pipe(sourcemaps.write())
             .pipe(gulp.dest(stylesDir))
             .pipe(rename({suffix: '.min'}))
             .pipe(csso({
               report: 'gzip'
             }))
+            .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(stylesDir))
 });
 
@@ -42,7 +42,7 @@ gulp.task('js', function() {
               .pipe(gulp.dest(scriptsDir))
               .pipe(uglify())
               .pipe(rename({suffix: '.min'}))
-              .pipe(sourcemaps.write())
+              .pipe(sourcemaps.write('.'))
               .pipe(gulp.dest(scriptsDir))
               .on('error', gutil.log)
 });
