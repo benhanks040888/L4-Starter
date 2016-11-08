@@ -26,8 +26,8 @@ if ( ! function_exists('uploads'))
    */
   function uploads($upload)
   {
-    if (file_exists(public_path() . 'uploads/' . $upload)) {
-      return 'no image broh';
+    if (!file_exists(public_path() . '/uploads/' . $upload)) {
+      return 'file not found';
     }
     return asset('uploads/' . ltrim($upload, '/'));
   }
@@ -44,8 +44,8 @@ if ( ! function_exists('uploads_path'))
    */
   function uploads_path($upload)
   {
-    if (file_exists(public_path() . 'uploads/' . $upload)) {
-      return 'no image broh';
+    if (!file_exists(public_path() . '/uploads/' . $upload)) {
+      return 'file not found';
     }
 
     return public_path() . '/uploads/' . ltrim($upload, '/');
